@@ -14,19 +14,19 @@ success = function () {
 
 			// // 2. iterate through the image objects
 			// // 2a. find the image objects from json
-			// var photos = json.photos.photo;
+			var photos = json.photos.photo;
 			// $.each(photos, function(key, photo) {
 			// 	// 3. add images to the body
 			// 	// 3b. figure out real image source
-			// 	var farmID = photo.farm;
-			// 	var serverID = photo.server;
-			// 	var id = photo.id;
-			// 	var secret = photo.secret;
-			// 	var imageURL = 'https://farm' +
-			// 		farmID + '.staticflickr.com/' +
-			// 		serverID + '/' +
-			// 		id + '_' +
-			// 		secret + '.jpg';
+				var farmID = photo.farm;
+				var serverID = photo.server;
+				var id = photo.id;
+				var secret = photo.secret;
+				var imageURL = 'https://farm' +
+					farmID + '.staticflickr.com/' +
+					serverID + '/' +
+					id + '_' +
+					secret + '.jpg';
 
 			// 	$('<img>') // 3a. create an image
 			// 		.attr('src', imageURL)
