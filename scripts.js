@@ -3,13 +3,14 @@ console.log('working');
 
 
 $.ajax({
-		url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&per_page=100&format=json&nojsoncallback=1",
+		url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&per_page=100&format=json",
     type: "GET",
     dataType: "json",
-    success: 'success'
+    status: 'OK',
+		success: 'success'
 });
 
-success = function () {
+success = function (json) {
 			// // 1. console.log json object (did that, removed it)
 
 			// // 2. iterate through the image objects
@@ -22,15 +23,21 @@ success = function () {
 				var serverID = photo.server;
 				var id = photo.id;
 				var secret = photo.secret;
+				var img = document.createElement('img');
 				var imageURL = 'https://farm' +
 					farmID + '.staticflickr.com/' +
 					serverID + '/' +
 					id + '_' +
 					secret + '.jpg';
+				var thisIsIt = $(img).attr({'src': imageUrl,
+      	'class': 'col-lg-12'});
 
-				$('<img>') // 3a. create an image
-					.attr('src', imageURL)
-					.attr('alt', 'Image')
+					 $(thisIsIt).appendTo('body');
+
+				// $.post('<img>') // 3a. create an image
+				// 	.attr('src', imageURL)
+				// 	.attr('alt', 'Image')
+				// 	alert( "Load was performed." )
 			// 		.appendTo('body'); // 3c. add to body
 			// }
    //  },
@@ -39,8 +46,9 @@ success = function () {
     	console.log(status);
     	console.log(error);
    }
-   
+
 }
+
 
 
 
