@@ -28,17 +28,19 @@ success = function () {
 					id + '_' +
 					secret + '.jpg';
 
-			// 	$('<img>') // 3a. create an image
-			// 		.attr('src', imageURL)
-			// 		.attr('alt', 'Image')
+				$('<img>') // 3a. create an image
+					.attr('src', imageURL)
+					.attr('alt', 'Image')
 			// 		.appendTo('body'); // 3c. add to body
 			// }
    //  },
-   //  error: function(xhr, status, error) {
-   //  	console.log(xhr);
-   //  	console.log(status);
-   //  	console.log(error);
-    }
+    error = function(xhr, status, error) {
+    	console.log(xhr);
+    	console.log(status);
+    	console.log(error);
+   }
+   
+}
 
 
 
