@@ -3,7 +3,7 @@ console.log('working');
 $(function() {
     $.ajax({
         type: "GET",
-        url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&format",
+        url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&per_page=500&format=json&nojsoncallback=1",
         dataType: "json"
         success: function (json) {
 					// 1. console.log json object (did that, removed it)
