@@ -11,14 +11,11 @@ $.ajax({
 });
 
 success = function (json) {
-			// // 1. console.log json object (did that, removed it)
 
-			// // 2. iterate through the image objects
-			// // 2a. find the image objects from json
+
 			var photos = json.photos.photo;
-			// $.each(photos, function(key, photo) {
-			// 	// 3. add images to the body
-			// 	// 3b. figure out real image source
+				$.each(photos), function(key, photo) {
+
 				var farmID = photo.farm;
 				var serverID = photo.server;
 				var id = photo.id;
@@ -40,14 +37,14 @@ success = function (json) {
 				// 	alert( "Load was performed." )
 			// 		.appendTo('body'); // 3c. add to body
 			// }
-   //  },
+    },
     error = function(xhr, status, error) {
     	console.log(xhr);
     	console.log(status);
     	console.log(error);
    }
+ }
 
-}
 
 
 
