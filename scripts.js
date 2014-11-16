@@ -1,12 +1,12 @@
 console.log('working');
 
+// promises
 $.ajax({
-		url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&per_page=100&format=json",
+    url: "https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=21b8dfca2fb6f130f45f45f53dae714a&per_page=100&format=json",
     type: "GET",
     dataType: "json",
-    status: 'OK',
-		success: 'success'
-});
+}).then(function(data, status, xhr) {}, function(xhr, status, error) {});
+
 
 success = function (json) {
 
@@ -27,19 +27,19 @@ success = function (json) {
 
 			 $(thisIsIt).appendTo('body');
 
-		// $.post('<img>') // 3a. create an image
-		// 	.attr('src', imageURL)
-		// 	.attr('alt', 'Image')
-		// 	alert( "Load was performed." )
-	// 		.appendTo('body'); // 3c. add to body
-	// }
+		$.post('<img>') // 3a. create an image
+			.attr('src', thisIsIt)
+			.attr('alt', 'Image')
+			alert( "Load was performed." )
+			.appendTo('body'); // 3c. add to body
+	}
 },
 error = function(xhr, status, error) {
 	console.log(xhr);
 	console.log(status);
 	console.log(error);
 }
-}
+
 
 
 
