@@ -23,15 +23,17 @@ var success = function (json) {
 				id + '_' +
 				secret + '.jpg';
 
-			var thisIsIt = $(img).attr({'src': imageUrl,
-	  	'class': 'col-lg-12'});
+            $('<img>')
+              .attr('src', imageURL)
+              .attr('alt', 'Image')
+              .addClass('th')
+              .appendTo('li');
 
-		$.post('<img>') // 3a. create an image
-			.attr('src', thisIsIt)
-			.attr('alt', 'Image')
-			alert( "Load was performed." )
-			.appendTo('body'); // 3c. add to body
-	}
+            $('<a>')
+            .attr('href', imageURL)
+            .appendTo('li');
+          });
+
 },
 error = function(xhr, status, error) {
 	console.log(xhr);
